@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cookies</title>
+</head>
+<body>
+	Cookie
+	<script type="text/javascript">
+		// var expires = new Date();
+		// expires.setTime(expires.getTime() + -1 * 24 * 60 * 60 * 1000);
+
+		// document.cookie = "username=Khiem;expires=" + expires.toUTCString();
+		// document.cookie = "username1=Nu;expires=" + expires.toUTCString();
+
+		setCookies("username", "Nguyễn Văn A", 1);
+		setCookies("username1", "Nu", 1);
+
+		function setCookies(name, value, days){
+			var expires = new Date();
+			expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+
+			document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + expires.toUTCString();
+		}
+
+	</script>
+</body>
+</html>
+<script>
+	// Assuming the array is already defined
+	const numbers = [2, 5, 8, 3, 11, 6, 9];
+
+	// Function to get the smallest odd number
+	function getSmallestOddNumber(arr) {
+	    // Filter odd numbers
+	    const oddNumbers = arr.filter(num => num % 2 !== 0);
+
+	    // Check if there are any odd numbers
+	    if (oddNumbers.length > 0) {
+	        // Find the smallest odd number
+	        const smallestOdd = Math.min(...oddNumbers);
+	        return smallestOdd;
+	    } else {
+	        // No odd numbers in the array
+	        return "No odd numbers found.";
+	    }
+	}
+
+	// Example usage
+	const result = getSmallestOddNumber(numbers);
+	console.log(result);
+</script>

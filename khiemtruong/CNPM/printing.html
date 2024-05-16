@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Printing Service</title>
+    <!-- Add your CSS styles here (if any) -->
+    <link rel="stylesheet" href="printing_style.css"> 
+</head>
+<body>
+
+<header>
+    <h1><img src="logoBK.png"></h1>
+    <h2>Smart Printing Service</h2>
+</header>
+
+<main>
+    <h2>Upload and Print</h2>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="file">Select file to upload:</label>
+        <input type="file" name="file" id="file" required><br>
+        <input type="submit" value="Upload and Print">
+    </form>
+</main>
+
+</body>
+</html>

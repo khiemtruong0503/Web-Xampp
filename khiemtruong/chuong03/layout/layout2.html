@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tạo Layout</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		#red{
+			background-color: red;
+			height: 100px;
+			margin-bottom: 5px;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#gray1, #gray2{
+			background-color: gray;
+			height: 80%;
+			display: inline-block;
+			float: left;
+		}
+		#gray1{
+			width: 20%;
+			margin-right: 5px;
+		}
+		#gray2{
+			width: 79%;
+		}
+		#yellow{
+			height: 80px;
+			background-color: yellow;
+			margin-bottom: 5px;
+		}
+		#blue{
+			background-color: blue;
+			width: 75%;
+			height: 80px;
+			display: inline-block;
+		}	
+		#orange4{
+			background-color: orange;
+			width: 24%;
+			height: 500px;
+			display: inline-block;
+			float: right;
+		}
+		#pink{
+			background-color: pink;
+			width: 50%;
+			height: 250px;
+			display: inline-block;
+			float: left;
+			margin-bottom: 5px;
+		}
+		#purple{
+			background-color: purple;
+			width: 25%;
+			height: 416px;
+			display: inline-block;
+			float: right;
+			margin-right: 18px;
+		}
+		#orange1, #orange2, #orange3{
+			background-color: orange;
+			height: 160px;
+			width: 16.42%;
+			float: left;
+			display: block;
+			margin-right: 5px;
+			margin-bottom: 5px;
+		}
+		footer{
+			background-color: green;
+			height: 100px;
+			width: 100%;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<header id="red">
+		<div id="gray1"></div>
+		<div id="gray2"></div>
+	</header>
+	<div id="yellow"></div>
+
+	<div class="main_content">
+		<div id="blue"></div>
+		<div class="advertisement" id="orange4"></div>
+
+		<div class="first_column">
+			<div id="pink"></div>
+			<div id="purple"></div>
+
+			<div id="orange1"></div>
+			<div id="orange2"></div>
+			<div id="orange3"></div>
+		</div>
+	</div>
+
+	<footer></footer>
+</body>
+</html>

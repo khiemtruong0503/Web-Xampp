@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Học CSS</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		.box0, .box1, .box2{
+			border: 1px solid;
+		}
+		.box0{
+			background-color: lightblue;
+			display: block;
+			vertical-align: middle;
+			line-height: 100px;
+			margin-bottom:5px;
+			width: 100%;
+			height: 100px;
+			text-align: center;
+		}
+		.box1{
+			background-color:limegreen;
+			width: 25%;
+			float: left;
+			height: 300px;
+		}
+		.box2{
+			background-color: mediumpurple;
+			float: left;
+			width: 75%;
+			height: 300px;
+		}
+		@media screen and (max-width: 900px){
+			.box1{
+				background-color: red;
+			}
+		}
+		@media screen and (max-width: 600px){
+			.box1{
+				background-color: pink;
+			}
+		}
+		@media screen and (max-width: 300px){
+			.box1{
+				background-color: orange;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box0">Đây là HEADER</div>
+	<div>
+		<div class="box1">Đây là MENU</div>
+		<div class="box2">Đây là CONTENT</div>
+	</div>
+</body>
+</html>

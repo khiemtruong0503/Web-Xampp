@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tạo Layout</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		header{
+			width: 100%;
+			background-color: black;
+		}
+		footer, .row{
+			max-width: 1200px;
+			margin: auto;
+		}
+		footer{
+			height: 100px;
+			background-color: #06f;
+		}
+		.top-nav{
+			height: 40px;
+			line-height: 40px;
+			background-color: #FAFAFA;
+		}
+		.featured-content, .featured-ads{
+			float: left;
+		}
+		.featured-content{
+			width: 75%;
+		}
+		.featured-ads{
+			background-color: #f30;
+			height:675px;
+			width: 25%;
+		}
+		.clearfix::after{
+			content:"";
+			display: table;
+			clear: both;
+		}
+		.hot-news, .main-content, .sub-content{
+			float: left;
+		}
+
+		.hot-news{
+			background-color: #f9c;
+			width: 100%;
+			height: 25px;
+		}
+		.main-content{
+			width: 75%;
+		}
+		.sub-content{
+			width: 25%;
+			height: 650px;
+			background-color: #9f3;
+		}
+		article{
+			float: left;
+			width: 33.33%;
+			height: 150px;
+			background-color: #6cf;
+		}
+		article:first-child{
+			width: 100%;
+			height: 500px;
+			background-color: #f96;
+		}
+		header .header-search{
+			width: 45%;
+		}
+		header .header-search input{
+			/*background-image: url(icon_search.png);
+			background-repeat: no-repeat;*/
+			background: #fff url(icon_search.png) no-repeat;
+			padding: 5px 5px 5px 40px;
+			border-radius: 5px 0 0 5px;
+			width: 70%;
+		}
+		button{
+		    background-color: #EE7915;	
+		    padding: 7px 15px;
+		    color: #fff;
+		    border-radius: 0 5px 5px 0;
+		}
+		header .header-nav a{
+			color: #fff;
+			text-decoration: none;
+			padding: 7px 15px;
+		}
+		header .header-time{
+			color: #EE7915;
+		}
+		.header-logo, .header-search, .header-nav{
+			float: left;
+		}
+		.header-time{
+			float: right;
+		}
+		header .row>div{
+			height: 45px;
+			line-height: 45px;
+		}
+		.top-nav ul{
+			list-style-type: none;
+			margin-top: 5px;
+		}
+		.top-nav a{
+			text-decoration: none;
+			display: block;
+		}
+		.top-nav>ul>li>a:hover{
+			text-decoration: underline;
+		}
+		.top-nav>ul>li{
+			float: left;
+			padding: 0 5px;
+			border-top: 2px solid;
+			position: relative;
+		}
+		.top-nav .group-one{
+			border-color: #00AEE8;
+		}
+		.top-nav .group-one>a{
+			color: #00AEE8;
+		}
+		.top-nav .group-two{
+			border-color: #008E00;
+		}
+		.top-nav .group-two a{
+			color: #008E00;
+		}
+		.top-nav .group-three{
+			border-color: #FF6B00;
+		}
+		.top-nav .group-three a{
+			color: #FF6B00;
+		}
+		.top-nav .group-four{
+			border-color: #FF0055;
+		}
+		.top-nav .group-four a{
+			color: #FF0055;
+		}
+		.top-nav img{
+			vertical-align: middle;
+		}
+		.top-nav .sub-items a{
+			color: black;
+		}
+		.top-nav .sub-items a:hover{
+			color: #00AEE8;
+		}
+		.top-nav .sub-items{
+			display: none;
+			width: 120px;
+			position: absolute;
+			top: 30px;
+			background-color: #fff;
+		}
+		.top-nav>ul>li:hover .sub-items{
+			display: block;
+		}
+		.top-nav .sub-items li{
+			border: 1px solid #eee;
+		}
+		.top-nav .sub-items li a{
+			padding: 0 10px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<section class="row clearfix">
+			<div class="header-logo">
+				<img src="logokenh14.png" height="30px">
+			</div>
+			<div class="header-search">
+				<input type="text" placeholder="Nhập nội dung cần tìm...">
+				<button>Tìm Kiếm</button>
+			</div>
+			<div class="header-nav">
+				<a href="#">MP3</a>
+				<a href="#">TV</a>
+				<a href="#">ME</a>
+			</div>
+			<div class="header-time">Thứ 6 ngày 08/06/2018</div>
+		</section>
+	</header>
+	<section class="row top-nav clearfix">
+		<ul>
+			<li class="group-one">
+				<a href="#">
+					<img src="icon_home.png">
+				</a>
+			</li>
+			<li class="group-one">
+				<a href="">Thời sự</a>
+				<ul class="sub-items">
+					<li><a href="#">Giao thông</a></li>
+					<li><a href="#">Đô thị</a></li>
+					<li><a href="#">Đời sống</a></li>
+					<li><a href="#">Quốc phòng</a></li>
+					<li><a href="#">Ảnh & video</a></li>
+				</ul>
+			</li>
+			<li class="group-one">
+				<a href="">Thế giới</a>
+			</li>
+			<li class="group-one">
+				<a href="">Kinh doanh</a>
+			</li>
+			<li class="group-one">
+				<a href="">Pháp luật</a>
+			</li>
+			<li class="group-two">
+				<a href="">Xuất bản</a>
+			</li>
+			<li class="group-two">
+				<a href="">Thể thao</a>
+			</li>
+			<li class="group-two">
+				<a href="">Công nghệ</a>
+			</li>
+			<li class="group-two">
+				<a href="">Xe 360</a>
+			</li>
+			<li class="group-three">
+				<a href="">Giải trí</a>
+			</li>
+			<li class="group-three">
+				<a href="">Âm nhạc</a>
+			</li>
+			<li class="group-three">
+				<a href="">Phim ảnh</a>
+			</li>
+			<li class="group-three">
+				<a href="">Thời trang</a>
+			</li>
+			<li class="group-four">
+				<a href="">Sống khỏe</a>
+			</li>
+			<li class="group-four">
+				<a href="">Giáo dục</a>
+			</li>
+			<li class="group-four">
+				<a href="">Sức khỏe</a>
+			</li>
+			<li class="group-four">
+				<a href="">Du lịch</a>
+			</li>
+		</ul>
+	</section>
+	<section class="row clearfix">
+		<div class="featured-content clearfix">
+			<div class="hot-news">Tin mới</div>
+			<div class="main-content">
+				<article>Bài báo 1</article>
+				<article>Bài báo 2</article>
+				<article>Bài báo 3</article>
+				<article>Bài báo 4</article>
+			</div>
+			<div class="sub-content">Danh sách tin</div>
+		</div>
+		<div class="featured-ads">Quảng cáo</div>
+	</section>
+	<footer>Footer</footer>
+</body>
+</html>

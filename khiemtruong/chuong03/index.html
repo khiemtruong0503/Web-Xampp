@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Học CSS</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		.header, .menu, .content{
+			border: 1px solid;
+		}
+		.header{
+			text-align: center;
+/*			vertical-align: middle;*/
+			line-height: 100px;
+			height: 100px;
+			background-color: lightblue;
+			margin-bottom: 5px;
+		}
+		.menu{
+			background-color:limegreen;
+			height: 250px;
+			width: 25%;
+			float: left;
+		}
+		.content{
+			background-color: orchid;
+			height:250px;
+			width: 75%;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">Đây là HEADER</div>
+	<div>
+		<div class="menu">Đây là MENU</div>
+		<div class="content">Đây là CONTENT</div>
+	</div>
+</body>
+</html>

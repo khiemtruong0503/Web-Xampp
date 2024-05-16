@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Zing mp3</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.clearfix::after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+		header{
+			width: 100%;
+			background-color: black;
+		}
+		footer, .row{
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		footer{
+			height: 100px;
+			background-color: #;
+			border-top: 1px solid #eee;
+			padding-top: 7px;
+		}
+		.top-nav{
+			background-color: #FAFAFA;
+			height: 40px;
+			line-height: 40px;
+		}
+		.featured-content, .featured-ads{
+			float: left;
+		}
+		.featured-content{
+			width: 75%;
+		}
+		.featured-ads{
+			width: 25%;
+/*			height: 670px;*/
+/*			background-color: #f30;*/
+		}
+		.hot-news{
+/*			background-color: #f9c;*/
+/*			height: 20px;*/
+			width: 100%;
+			padding: 5px 0;
+		}
+		.hot-news, .main-content, .sub-content{
+			float: left;
+		}
+		.main-content{
+			width: 75%;
+		}
+		.sub-content{
+			width: 25%;
+/*			height: 650px;*/
+/*			background-color: #9f3;*/
+			padding: 7px 0 7px 7px;
+			border-top: 1px solid #eee;
+			overflow: hidden;
+			height: 720px;
+		}
+		article{
+			float: left;
+			width: 33.33%;
+/*			height: 150px;*/
+/*			background-color: #6cf;*/
+		}
+		article:first-child{
+			width: 100%;
+/*			height: 500px;*/
+/*			background-color: #f96;*/
+			border-bottom: 1px solid #eee;
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+		}
+		header .header-search{
+			width: 45%;
+		}
+		header .header-search input{
+			/*background-image: url(icon_search.png);
+			background-repeat: no-repeat;*/
+			padding: 5px 5px 5px 28px;
+			background: #fff url(icon_search.png) no-repeat;
+			border-radius: 15px 5px 5px 15px;
+			width: 70%;
+		}
+		header .header-search button{
+			color: #fff;
+			background-color: #EE7915;
+			padding: 5px 15px;
+			border-radius: 5px 15px 15px 5px;
+		}
+		header .header-nav>a{
+			color: #fff;
+			text-decoration: none;
+			padding: 7px 15px;
+		}
+		header .header-time{
+			color: #EE7915;
+		}
+		.header-logo, .header-search, .header-nav{
+			float: left;
+		}
+		.header-time, .header-phone{
+			float: right;
+		}
+		header .row>div{
+			height: 54px;
+			line-height: 54px;
+		}
+		.top-nav ul{
+			list-style-type: none;
+			margin-top: 5px;
+		}
+		.top-nav a{
+			text-decoration: none;
+			display: block;
+		}
+		.top-nav>ul>li{
+			float: left;
+			padding: 0 5px;
+			border-top: 2px solid;
+			position: relative;
+		}
+		.top-nav .group-one{
+			border-color: #00AEE8;
+		}
+		.top-nav .group-one>a{
+			color: #00AEE8;
+		}
+		.top-nav .group-two{
+			border-color: #008E00;
+		}
+		.top-nav .group-two a{
+			color: #008E00;
+		}
+		.top-nav .group-three{
+			border-color: #FF6B00;
+		}
+		.top-nav .group-three a{
+			color: #FF6B00;
+		}
+		.top-nav .group-four{
+			border-color: #FF0055;
+		}
+		.top-nav a:hover{
+			text-decoration: underline;
+		}
+		.top-nav .group-four a{
+			color: #FF0055;
+		}
+		.top-nav img{
+			vertical-align: middle;
+		}
+		.top-nav .sub-items a{
+			color: black;
+		}
+		.top-nav .sub-items a:hover{
+			color: #00AEE8;
+			text-decoration: none;
+		}
+		.top-nav .sub-items{
+			display: none;
+			position: absolute;
+			background-color: #fff;
+			top: 30px;
+			width: 120px;
+		}
+		.top-nav>ul>li:hover .sub-items{
+			display: block;
+		}
+		.top-nav .sub-items li{
+			border: 1px solid #eee;
+			position: relative;
+		}
+		.top-nav .sub-items li>a{
+			padding: 0 10px;
+		}
+		.top-nav .sub-items .sub-items-one{
+			position: absolute;
+			display: none;
+			top: 0;
+			left: 120px;
+			width: 120px;
+			background-color: #fff;
+		}
+		.top-nav .sub-items>li:hover .sub-items-one{
+			display: block;
+		}
+		.hot-news .content-left{
+			float: left;
+		}
+		.hot-news .content-right{
+			float: right;
+		}
+		.hot-news .content-left span:first-child{
+			color: #f93;
+			font-weight: bold;
+			padding-right: 10px;
+		}
+		.featured-content .main-content{
+			padding: 7px 7px 0 0;
+			border-top: 1px solid #eee;
+			border-right: 1px solid #eee;
+		}
+		.featured-content a{
+			text-decoration: none;
+		}
+		.featured-content .main-content .title-first{
+			color: black;
+			font-size: 2em;
+			font-weight: bold;
+		}
+		.featured-content .main-content .hot{
+			font-size: 1.7em;
+		}
+		.featured-content .main-content .hot, .featured-content .sub-content .hot{
+			color: #fff;
+			font-weight: bold;
+			background: linear-gradient(to right, #D2363E, 	#944FD5);
+			padding: 3px 6px;
+			border-radius: 5px;
+		}
+		.featured-content .main-content .title-other, .featured-content .sub-content .title{
+			color: black;
+/*			font-size: 1.2em;*/
+			font-weight: bold;
+		}
+		.featured-content img{
+			width: 100%;
+		}
+		.featured-content .main-content article:not(:first-child){
+			padding-left: 10px;
+		}
+		.featured-content .sub-content article{
+			width: 100%;
+		}
+		.featured-content .sub-content article:not(:first-child){
+			padding: 5px 0;
+		}
+		.featured-content .sub-content .scroll{
+			height: 100%;
+			overflow: auto;
+			padding-right: 50px;
+			margin-right: -50px;
+		}
+		.featured-ads{
+			padding: 10px;
+			height: 750px;
+		}
+		.featured-ads div{
+			width: 100%;
+			height: 100%;
+		}
+		footer div{
+			float: left;
+		}
+		footer .logo{
+			float: right;
+		}
+		.header-phone{
+			display: none;
+		}
+		@media screen and (max-width: 1200px){
+			.featured-ads, .top-nav, .header-nav, .header-time{
+				display: none;
+			}
+			.featured-content{
+				width: 100%;
+			}
+			header .header-search{
+				width: 85%;
+			}
+			header .header-phone{
+				display: block;
+			}
+		}
+		@media screen and (max-width: 1086px){
+			header .header-search{
+				width: 70%;
+			}
+		}
+		@media screen and (max-width: 543px){
+			header .header-search{
+				display: none;
+			}
+			.featured-content .main-content article:last-child{
+				display: none;
+			}
+			.featured-content .main-content article:not(:first-child){
+				width: 50%;
+			}
+		}
+		@media screen and (max-width: 400px){
+			.featured-content .sub-content{
+				float: none;
+				border: 1px solid #eee;
+				width: 95%;
+				margin-auto: 10px auto;
+				border-radius: 5px;
+			} 
+			.featured-content .main-content{
+				width: 100%;
+			}
+			.featured-content .sub-content article{
+				border-bottom: 1px solid #eee;
+			}
+		}
+		</style>
+</head>
+<body>
+	<header>
+		<section class="row clearfix">
+			<div class="header-logo">
+				<img src="logokenh14.png" height="50px"></img>
+			</div>
+			<div class="header-search">
+				<input type="text" placeholder="Nhập nội dung cần tìm..."></input>
+				<button>TÌM KIẾM</button>
+			</div>
+			<div class="header-nav">
+				<a href="#">MP3</a>
+				<a href="#">TV</a>
+				<a href="#">ME</a>
+			</div>
+			<div class="header-time">Thứ ba ngày 3/10/2023</div>
+			<div class="header-phone">
+				<div class="phone-border">
+					<img src="smartphone.png">	
+				</div>
+			</div>
+		</section>
+	</header>
+	<section class="row top-nav clearfix">
+		<ul>
+			<li class="group-one">
+				<a>
+					<img src="icon_home.png">
+				</a>
+			</li>
+			<li class="group-one">
+				<a href="#">Thời sự</a>
+				<ul class="sub-items">
+					<li>
+						<a href="#">Giao thông</a>
+						<ul class="sub-items-one">
+							<li><a href="#">Đô thị 1</a></li>
+							<li><a href="#">Đời sống 1</a></li>
+							<li><a href="#">Quốc phòng 1</a></li>
+							<li><a href="#">Ảnh & video 1</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Đô thị</a></li>
+					<li><a href="#">Đời sống</a></li>
+					<li><a href="#">Quốc phòng</a></li>
+					<li>
+						<a href="#">Ảnh & video</a>
+						<ul class="sub-items-one">
+							<li><a href="#">Đô thị 2</a></li>
+							<li><a href="#">Đời sống 2</a></li>
+							<li><a href="#">Quốc phòng 2</a></li>
+							<li><a href="#">Ảnh & video 2</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="group-one">
+				<a href="#">Thế giới</a>
+			</li>
+			<li class="group-one">
+				<a href="#">Kinh doanh</a>
+			</li>
+			<li class="group-one">
+				<a href="#">Pháp luật</a>
+			</li>
+			<li class="group-two">
+				<a href="#">Xuất bản</a>
+			</li>
+			<li class="group-two">
+				<a href="#">Thể thao</a>
+			</li>
+			<li class="group-two">
+				<a href="#">Công nghệ</a>
+			</li>
+			<li class="group-two">
+				<a href="#">Xe 360</a>
+			</li>
+			<li class="group-three">
+				<a href="#">Giải trí</a>
+			</li>
+			<li class="group-three">
+				<a href="#">Âm nhạc</a>
+			</li>
+			<li class="group-three">
+				<a href="#">Phim ảnh</a>
+			</li>
+			<li class="group-three">
+				<a href="#">Thời trang</a>
+			</li>
+			<li class="group-four">
+				<a href="#">Sống khỏe</a>
+			</li>
+			<li class="group-four">
+				<a href="#">Giáo dục</a>
+			</li>
+			<li class="group-four">
+				<a href="#">Sức khỏe</a>
+			</li>
+			<li class="group-four">
+				<a href="#">Du lịch</a>
+			</li>
+		</ul>
+	</section>
+	<section class="row clearfix">
+		<div class="featured-content clearfix">
+			<div class="hot-news">
+				<div class="content-left">
+					<span>TIN TỨC MỚI</span>
+					<span>Đè bẹp HAGL, HVL Phan Thanh Hùng tự tin thách thức CLB Hà Nội...</span>
+				</div>
+				<div class="content-right">
+					<strong>TP.HCM</strong>
+					<span>31C / 27 - 33C</span>
+				</div>
+			</div>
+			<div class="main-content clearfix">
+				<article>
+					<a href="">
+						<img src="baibao1.jpg">
+					</a>
+					<a href="">
+						<span class="hot">WorldCup</span>
+						<span class="title-first">
+							VTV đồng ý chia sẻ bản quyền World Cup cho HTV
+						</span>
+					</a>
+					<p>
+						VTV đồng ý chia sẻ bản quyền WOrld Cup 2018 cho HTV để khai thác. Nhưng cả hai nhà đài đều phải chờ sự đồng ý của FIFA mới thực hiện được điều này.
+					</p>
+				</article>
+				<article>
+					<a href="">
+						<img src="hitler.jpg">
+						<span class="title-other">Người có lòng bác ái nhất nước Đức</span>
+					</a>
+				</article>
+				<article>
+					<a href="">
+						<img src="trump.jpg">
+						<span class="title-other">Thượng đỉnh Trump - Kim: Món quà vô giá dành cho Singapore</span>
+					</a>
+				</article>
+				<article>
+					<a href="">
+						<img src="singapore.jfif">
+						<span class="title-other">Singapore thủ đô đáng sống nhất Việt Nam</span>
+					</a>
+				</article>
+			</div>
+			<div class="sub-content">
+				<div class="scroll">
+					<article>
+					<a href="">
+						<img src="singapore.jfif">
+						<span class="title">Singapore thủ đô đáng sống nhất Việt Nam</span>
+					</a>
+					</article>
+						<article>
+							<a href="">
+								<span class="hot">WorldCup</span>
+								<span class="title">
+									VTV đồng ý chia sẻ bản quyền World Cup cho HTV
+								</span>
+							</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								Johnny Depp - Tài tử hàng đầu lụi tàn vì nợ nần, bạo hành người tình?
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								Tái hiện vụ nữ sinh điện ảnh bị hiếp, giết tại phòng trọ
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								Thích Tiểu Long: Nước mắt từ 2 tuổi vì sự hà khắc của Thiếu Lâm Tự
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								Nhan sắc tuột dốc của mỹ nữ quyến rũ nhất Kpop
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="hot">WorldCup</span>
+							<span class="title">
+								Trắc nghiệm tiếng Anh: Thử tài hiểu biết về World Cup
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								7 'nam thần' thế hệ mới của 
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								7 'nam thần' thế hệ mới của 
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								7 'nam thần' thế hệ mới của 
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								7 'nam thần' thế hệ mới của 
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								7 'nam thần' thế hệ mới của 
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								7 'nam thần' thế hệ mới của 
+							</span>
+						</a>
+					</article>
+					<article>
+						<a href="">
+							<span class="title">
+								7 'nam thần' thế hệ mới của 
+							</span>
+						</a>
+					</article>
+				</div>
+			</div>
+		</div>
+		<div class="featured-ads">
+			<div>
+				<img src="ads.jpg">
+			</div>
+		</div>
+	</section>
+	<footer class="clearfix">
+		<div>
+			<p class="words">Giấy phép báo điện tử số: 236/GP-BTTTT. Tổng biên tập: Ngô Việt Anh</p>
+				<p>Cơ quan chủ quản: Hội xuất bản Việt Nam.</p>
+				<p>Tòa soạn: D29 Trần Thái Tông, Cầu Giấy, Hà Nội.</p>
+			<p class="slope">Chỉ được phát hành lại thông tin từ web site này khi có sự đồng ý bằng văn bản của báo.</p>
+		</div>
+		<div class="logo">
+			<img src="logokenh14.png">
+		</div>
+	</footer>
+</body>
+</html>
